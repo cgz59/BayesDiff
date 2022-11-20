@@ -1,0 +1,15 @@
+source("R-codes/sim_main_submission.R")
+replic <- 20
+
+message(paste("Scenario 1 start",date(),"******"))
+scene1<-simBayesdiff(Sigma=0.6,eta=0.004,replic=replic)
+message(paste("Scenario 1 end",date(),"******"))
+message(paste("Scenario 2 start",date(),"******"))
+scene2<-simBayesdiff(Sigma=0.6,eta=0,replic=replic)
+message(paste("Scenario 2 end",date(),"******"))
+message(paste("Scenario 3 start",date(),"******"))
+scene3<-simBayesdiff(Sigma=1,eta=0.004,replic=replic)
+message(paste("Scenario 3 end",date(),"******"))
+message(paste("Scenario 4 start",date(),"******"))
+scene4<-simBayesdiff(Sigma=1,eta=0,replic=replic)
+message(paste("Scenario 4 end",date(),"******"))
