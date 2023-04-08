@@ -1824,7 +1824,9 @@ fast_PDP_fn.main <- function(parm, data, col.frac.probes, prob.compute.col.nbhd,
   
 #  if (parm$order==1){
     
-    for (cc in 1:parm$p){
+  p.indx = sample(1:parm$p, replace=FALSE, size=round(col.frac.probes*parm$p))
+  
+    for (cc in p.indx){
       parm$k<-cc
       
       tmp <- PDP_fn.gibbs_order_1(k=parm$k, parm, data, computeMode)
